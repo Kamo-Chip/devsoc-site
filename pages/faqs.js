@@ -49,7 +49,7 @@ const FAQPage = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          height: "100vh",
+          minHeight: "100vh",
         }}
       >
         <h1>Frequently Asked Questions</h1>
@@ -101,13 +101,13 @@ const FAQItem = ({ question }) => {
           onClick={() => setIsAnswerVisible(!isAnswerVisible)}
           style={{
             cursor: "pointer",
-            backgroundColor: "#000",
-            color: "#fff",
-            borderRadius: "50%",
-            width: "50px",
-            height: "50px",
-            minWidth: "50px",
-            minHeight: "50px",
+            // backgroundColor: "#000",
+            color: "#000",
+            // borderRadius: "50%",
+            // width: "50px",
+            // height: "50px",
+            // minWidth: "50px",
+            // minHeight: "50px",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",

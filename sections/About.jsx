@@ -47,7 +47,7 @@ const About = () => {
             The Wits Developer Society is a student led organization designed
             for student programmers with a mission to equip them with all they
             need to make for a smooth transition from university to work. Our
-            vision is to see students to be more aware of the world of
+            vision is to see students become more aware of the world of
             opportunities out there and have knowledge of how to get there.
           </p>
         </div>

@@ -27,7 +27,7 @@ export default function Blog({ allPostsData }) {
         <title>The DevSoc Blog</title>
       </Head>
       <section className="blogContainer">
-        <h1>{"Your guide to your business's online success"}</h1>
+        {/* <h1>{"Our Thoughts on a Variety of Topics"}</h1> */}
         <ul className="blogList">
           {allPostsData.map(
             ({ id, date, title, tag, image, imageAlt, preview }) => (
