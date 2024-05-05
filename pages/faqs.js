@@ -106,6 +106,8 @@ const FAQItem = ({ question }) => {
             borderRadius: "50%",
             width: "50px",
             height: "50px",
+            minWidth: "50px",
+            minHeight: "50px",
             display: "flex",
             flexDirection: "row",
             alignItems: "center",

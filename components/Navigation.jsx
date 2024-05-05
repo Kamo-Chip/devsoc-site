@@ -148,7 +148,7 @@ const Navigation = ({ blog, isScrollLinksHidden }) => {
           </ScrollLink>
         </nav>
       ) : (
-        <nav className="navigation blogStyles">
+        <nav className="navigation blogStyles" id="top">
           <header className="logo">
             <Link href="/">
               <Image
@@ -163,6 +163,32 @@ const Navigation = ({ blog, isScrollLinksHidden }) => {
           <Link href="/" className="blogLink">
             <IoIosArrowBack className="blogBack" size="2.5rem" />
           </Link>
+          <ScrollLink
+            to="top"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            onClick={closeNav}
+            href="#"
+            style={{
+              position: "fixed",
+              bottom: "2.7rem",
+              right: "1rem",
+              padding: "1rem",
+              borderRadius: "50%",
+              width: "50px",
+              height: "50px",
+              backgroundColor: "#000",
+              color: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              zIndex: "3",
+            }}
+          >
+            <FaChevronUp />
+          </ScrollLink>
         </nav>
       )}
     </>
