@@ -1,0 +1,32 @@
+{
+  "name": "makersdev-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "@vercel/analytics": "^0.1.5",
+    "aos": "^2.3.4",
+    "date-fns": "^2.30.0",
+    "emailjs": "^4.0.1",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
+    "embla-carousel-react": "^8.0.0-rc22",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.5",
+    "framer-motion": "^11.1.7",
+    "gray-matter": "^4.0.3",
+    "next": "13.0.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-scroll": "^1.8.8",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1"
+  }
+}

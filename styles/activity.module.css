@@ -1,0 +1,52 @@
+.services {
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.services button {
+  align-self: center;
+  margin-top: 5rem;
+  font-size: 30px;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 1px grey;
+}
+
+.services iframe {
+  max-width: 90vw;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .itemContainer {
+    margin-bottom: 2rem;
+  }
+
+  .services button {
+    margin-top: 1rem;
+    font-size: 24px;
+  }
+}
