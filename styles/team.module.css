@@ -13,14 +13,18 @@
   align-items: center;
   justify-items: center;
   max-width: 100vw;
+  margin-top: 2rem;
 }
 
 .itemContainer {
   cursor: pointer;
   width: 200px;
+  height: 205px;
+  max-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* justify-content: space-between; */
   padding: 1rem;
   transition: all 200ms;
 }
@@ -38,10 +42,15 @@
   box-shadow: 0 0 3px grey;
 }
 
+.linkedInLink {
+  display: none;
+  position: absolute;
+}
+
 @media screen and (max-width: 900px) {
   .subContainer {
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 0rem;
+    row-gap: 1rem;
     column-gap: 0rem;
   }
 }

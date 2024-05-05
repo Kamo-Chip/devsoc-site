@@ -2,7 +2,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaExternalLinkAlt, FaLinkedinIn } from "react-icons/fa";
 import teamStyles from "../styles/team.module.css";
 
 const years = ["2024", "2023", "2022"];
@@ -475,9 +475,19 @@ const Team = () => {
 };
 
 const MemberItem = ({ imgSrc, name, position, linkedInUrl }) => {
+  const [isLinkedInVisible, setIsLinkedInVisible] = useState(false);
   return (
-    <div className={teamStyles.itemContainer}>
-      <Image src={imgSrc} alt="" width={200} height={200} />
+    <a
+      href={linkedInUrl}
+      target="_blank"
+      className={teamStyles.itemContainer}
+      onMouseEnter={() => {
+        setIsLinkedInVisible(true);
+      }}
+      onMouseLeave={() => {
+        setIsLinkedInVisible(false);
+      }}
+    >
       <div
         style={{
           display: "flex",
@@ -485,6 +495,45 @@ const MemberItem = ({ imgSrc, name, position, linkedInUrl }) => {
           alignItems: "center",
         }}
       >
+        <div style={{ display: "flex", position: "relative" }}>
+          <Image src={imgSrc} alt="" width={200} height={200} />
+          {isLinkedInVisible ? (
+            <span
+              className={teamStyles.linkedInLink}
+              style={{
+                marginTop: ".5rem",
+                backgroundColor: "rgba(0, 0, 0, 0.3)",
+                color: "#fff",
+                padding: ".5rem",
+                borderRadius: "50%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                left: "0",
+                right: "0",
+                top: "0",
+                bottom: "0",
+                margin: "auto",
+                fontSize: "24px",
+              }}
+            >
+              <span
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <span style={{ marginRight: ".25rem" }}>
+                  <FaLinkedinIn />
+                </span>
+
+                <FaExternalLinkAlt size="16px" />
+              </span>
+            </span>
+          ) : null}
+        </div>
+
         <span
           style={{
             fontSize: "16px",
@@ -495,27 +544,20 @@ const MemberItem = ({ imgSrc, name, position, linkedInUrl }) => {
         >
           {name}
         </span>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <span style={{ textAlign: "center", fontSize: "14px" }}>
           {position}
         </span>
-        <a
-          href={linkedInUrl}
-          target="_blank"
-          style={{
-            marginTop: ".5rem",
-            backgroundColor: "var(--linkedin-blue)",
-            color: "#fff",
-            padding: ".5rem",
-            borderRadius: "5px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <FaLinkedinIn />
-        </a>
       </div>
-    </div>
+    </a>
   );
 };
 export default Team;
