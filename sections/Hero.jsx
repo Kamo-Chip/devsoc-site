@@ -37,6 +37,9 @@ const Hero = () => {
             target="_blank"
             className={utilStyles.button}
             style={{ marginTop: "1rem", fontSize: "24px" }}
+            data-aos="fade-up"
+            data-aos-delay="5000"
+            data-aos-easing="ease-in"
           >
             Connect with us
           </a>
@@ -48,7 +51,8 @@ const Hero = () => {
           width={851}
           height={449}
           data-aos="fade-in"
-          data-aos-easing="ease"
+          data-aos-delay="6000"
+          data-aos-easing="ease-in"
         />
       </div>
       {/* <Bubble
