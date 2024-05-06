@@ -9,7 +9,7 @@ const Services = () => {
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 
   useEffect(() => {
-    Aos.init({ duration: 3000 });
+    Aos.init({ duration: 500 });
   }, []);
 
   return (

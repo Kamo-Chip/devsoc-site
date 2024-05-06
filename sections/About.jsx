@@ -6,7 +6,7 @@ import Bubble from "../components/Bubble";
 
 const About = () => {
   useEffect(() => {
-    Aos.init({ duration: 3000 });
+    Aos.init({ duration: 500 });
   }, []);
 
   return (

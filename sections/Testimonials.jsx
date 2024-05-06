@@ -2,9 +2,10 @@ import Testimonial from "../components/Testimonial";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Bubble from "../components/Bubble";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 const partners = [
   { name: "BBD", imageSrc: "/assets/partners/bbd.jpg" },
   { name: "Psybergate", imageSrc: "/assets/partners/psyb.jpg" },
@@ -26,12 +27,23 @@ const partners = [
   { name: "Zindi", imageSrc: "/assets/partners/zindi.png" },
 ];
 const Testimonials = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 3000, stopOnFocusIn: true, stopOnInteraction: false }),
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Autoplay({
+      delay: 3000,
+      stopOnFocusIn: true,
+      stopOnInteraction: false,
+    }),
   ]);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   useEffect(() => {
-    Aos.init({ duration: 3000 });
+    Aos.init({ duration: 500 });
   }, []);
   return (
     <section
@@ -42,6 +54,17 @@ const Testimonials = () => {
       <h1>Our Partners</h1>
       <div className="testimonialsContainer">
         <div className="testimonialMobile">
+          <span
+            className="embla__prev"
+            onClick={scrollPrev}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginRight: "1rem",
+            }}
+          >
+            <FaChevronLeft />
+          </span>
           <div className="embla" ref={emblaRef}>
             <div className="embla__container">
               {partners.map((partner, idx) => {
@@ -56,6 +79,17 @@ const Testimonials = () => {
               })}
             </div>
           </div>
+          <span
+            className="embla__next"
+            onClick={scrollNext}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginLeft: "1rem",
+            }}
+          >
+            <FaChevronRight />
+          </span>
         </div>
       </div>
       {/* <Bubble
