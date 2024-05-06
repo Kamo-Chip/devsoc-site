@@ -100,7 +100,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1000px) {
   .embla__slide {
     flex: 0 0 100%;
     min-width: 0;

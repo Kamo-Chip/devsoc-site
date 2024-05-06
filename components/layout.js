@@ -4,7 +4,14 @@ import Bubble from "./Bubble";
 
 const Layout = ({ children, blog, isScrollLinksHidden }) => {
   return (
-    <div style={{ minHeight: "100vh" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        width: "100vw",
+        overflowX: "hidden",
+        position: "relative",
+      }}
+    >
       <Navigation blog={blog} isScrollLinksHidden={isScrollLinksHidden} />
       <Bubble
         style={{

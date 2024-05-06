@@ -90,6 +90,10 @@
     text-align: center !important;
     align-items: center;
   }
+
+  .heroTextContainer small {
+    padding: 0;
+  }
   .hero img {
     margin-top: 2rem;
     max-width: 430px;
